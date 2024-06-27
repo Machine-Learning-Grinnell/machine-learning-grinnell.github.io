@@ -7,8 +7,8 @@ title: Linear Regression and Gradient Descent
 
 Lecture Materials:
 - [Linear Regression and Gradient Descent Slides (pptx)](/ml-notebooks-Spring24/slides/ML Club 2 - Regressions.pptx)
-- [Linear Regression and Gradient Descent Slides (pdf)](/ml-notebooks-Spring24/)
+- [Linear Regression and Gradient Descent Slides (pdf)](/ml-notebooks-Spring24/slides/ML Club 2 - Regressions.pdf)
 
 Practice Materials:
-- [Linear Regression Exercises (ipynb)](/ml-notebooks-Spring24/)
-- [Gradient Descent Exercises (ipynb)](/ml-notebooks-Spring24/)
+- [Linear Regression Exercises (ipynb)](/ml-notebooks-Spring24/linreg-gradient-descent/linreg-exercise.ipynb)
+- [Gradient Descent Exercises (ipynb)](/ml-notebooks-Spring24/linreg-gradient-descent/Gradient_Descent_Exercises.ipynb)

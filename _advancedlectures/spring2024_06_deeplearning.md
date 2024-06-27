@@ -6,4 +6,4 @@ title: Deep Learning
 ---
 
 Lecture Materials:
-- [Deep Learning Slides](http://example.com)
+- [Deep Learning Slides](/ml-notebooks-Spring24/slides/Deep Learning.pptx)
