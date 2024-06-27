@@ -1,0 +1,41 @@
+<ul class="menu">
+    {% for item in site.data.nav.items %}
+    <li class="{% if item.sub_items %}dropdown{% endif %}">
+        {% if item.url %}
+        <a class="page-link" href="{{ item.url | prepend: site.baseurl }}">
+            <i class="{{ item.icon_class }}"></i> {{ item.name }}
+        </a>
+        {% else %}
+        <a class="page-link dropdown-toggle" href="#" role="button" onclick="toggleDropdown(event)">
+            <i class="{{ item.icon_class }}"></i> {{ item.name }}
+        </a>
+        {% if item.sub_items %}
+        <ul class="dropdown-menu">
+            {% for sub_item in item.sub_items %}
+            <li>
+                <a class="dropdown-item" href="{{ sub_item.url | prepend: site.baseurl }}">{{ sub_item.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+<script>
+    function toggleDropdown(event) {
+        event.preventDefault(); // Stop the link from causing a page redirect
+        console.log(event.target); // Log the clicked element to ensure it's correct
+        let dropdownMenu = event.target.parentElement.querySelector('.dropdown-menu');
+        if (dropdownMenu) {
+            if (dropdownMenu.style.display === 'block') {
+                dropdownMenu.style.display = 'none';
+            } else {
+                dropdownMenu.style.display = 'block';
+            }
+        } else {
+            console.error('Dropdown menu not found!');
+        }
+    }
+</script>

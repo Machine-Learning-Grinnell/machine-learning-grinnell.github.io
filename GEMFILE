@@ -1,0 +1,30 @@
+source "https://rubygems.org"
+
+# This line uses GitHub Pages gem to manage Jekyll and its dependencies.
+# It automatically sets the Jekyll version used by GitHub Pages on their servers.
+gem "github-pages", group: :jekyll_plugins
+
+# Theme gem for Jekyll sites. Adjust the version as necessary.
+gem "minima", "~> 2.5"
+
+gem "webrick"
+
+gem "jekyll"
+
+gem "faraday-retry"
+
+# Plugins for Jekyll, managed under the jekyll_plugins group
+group :jekyll_plugins do
+  # RSS feed plugin
+  gem "jekyll-feed", "~> 0.15" # Updated to the latest compatible version
+end
+
+# Windows and JRuby compatibility for time zone data
+install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
+  gem "tzinfo", "~> 1.2"
+  gem "tzinfo-data"
+end
+
+# Optional: Only include this gem if running on Windows for improved performance
+# Ensure it is compatible with your Ruby version or environment
+gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?

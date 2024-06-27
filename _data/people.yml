@@ -1,0 +1,23 @@
+  - name: Gun Woo Kim
+    profile_pic: /_images/pp/GunWoo.jpg
+    webpage: https://en.wikipedia.org/wiki/Albus_Dumbledore
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac purus sit amet nisl tincidunt tincidunt. Nullam nec tincidunt arcu
+    category: current
+
+  - name: Trung Le
+    profile_pic: /_images/pp/Trung.jpg
+    webpage: https://en.wikipedia.org/wiki/Minerva_McGonagall
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac purus sit amet nisl tincidunt tincidunt. Nullam nec tincidunt arcu
+    category: current
+
+  - name: Minh Nguyen
+    profile_pic: /_images/pp/Minh.jpg
+    webpage: https://en.wikipedia.org/wiki/Harry_Potter_(character)
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac purus sit amet nisl tincidunt tincidunt. Nullam nec tincidunt arcu
+    category: current
+
+  - name: Kory Rosen
+    profile_pic: /_images/pp/Kory.png
+    webpage: https://rosenkor.github.io/
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac purus sit amet nisl tincidunt tincidunt. Nullam nec tincidunt arcu
+    category: alumni

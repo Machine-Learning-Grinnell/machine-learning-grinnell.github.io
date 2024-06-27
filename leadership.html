@@ -1,0 +1,56 @@
+---
+layout: page
+title: Leadership Team
+permalink: /leadership/
+---
+
+<!DOCTYPE html>
+<body>
+    <h1>Current Leadership Team and Alumni Advisors</h1>
+    <div class="team-container">
+        <!-- Current Leadership Team -->
+        <div class="team-section">
+            <h2>Current Leadership Team</h2>
+            {% for member in site.data.people %}
+            {% if member.category == "current" %}
+            <div class="team-member">
+                <div class="image-container">
+                    <img src="{{member.profile_pic | prepend: site.baseurl }}" class="image--cover">
+                    {% if member.webpage %}
+                    <p class="name"><a href="{{ member.webpage }}">{{member.name}}</a></p>
+                    {% else %}
+                    <p class="name">{{member.name}}</p>
+                    {% endif %}
+                </div>
+                <div class="description">
+                    <p>{{member.description}}</p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- Alumni Advisors -->
+        <div class="team-section">
+            <h2>Alumni Advisors</h2>
+            {% for member in site.data.people %}
+            {% if member.category == "alumni" %}
+            <div class="team-member">
+                <div class="image-container">
+                    <img src="{{member.profile_pic | prepend: site.baseurl }}" class="image--cover">
+                    {% if member.webpage %}
+                    <p class="name"><a href="{{ member.webpage }}">{{member.name}}</a></p>
+                    {% else %}
+                    <p class="name">{{member.name}}</p>
+                    {% endif %}
+                </div>
+                <div class="description">
+                    <p>{{member.description}}</p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

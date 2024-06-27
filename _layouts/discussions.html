@@ -1,0 +1,21 @@
+---
+layout: page
+---
+
+{{ content }}
+<ul id="archive">
+{% for discussion in site.discussions %}
+      <li class="archiveposturl" style="background: transparent">
+        <span><a href="{{ discussion.url | prepend: site.baseurl }}">{{ discussion.title }}</a></span>
+        <strong style="font-size:100%; font-family: 'Titillium Web', sans-serif; float:right">
+          <a title="Download PDF" href="{{ discussion.pdf | prepend: site.baseurl }}"><i class="fas fa-file-pdf"></i></a> 
+          {% if discussion.attachment %}
+            &nbsp; <a title="Download attachment (zip)" href="{{ discussion.attachment | prepend: site.baseurl }}"><i class="fas fa-file-archive"></i></a>
+          {% endif %}
+          {% if discussion.link %}
+            &nbsp; <a title="Visit link" href="{{ discussion.link }}" target="_blank"><i class="fas fa-link"></i></a>
+          {% endif %}
+        </strong> 
+      </li>
+{% endfor %}
+</ul>

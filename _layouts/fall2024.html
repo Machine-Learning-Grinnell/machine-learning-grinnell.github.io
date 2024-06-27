@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<header class="post-header">
+    <h1 class="post-title">Schedule</h1>
+</header>
+{{ content }}
+<div class="home" style="font-size: 0.8em;">
+    <ul class="responsive-table" style="margin-left: 0;">
+        <li class="table-header">
+            <div class="col col-1">Event</div>
+            <div class="col col-1-2">Date</div>
+            <div class="col col-2">Description</div>
+            <div class="col col-4">Course Material</div>
+        </li>
+        
+        {% assign all_events = site.events | concat: site.lectures | concat: site.advancedlectures | concat: site.practicedays | concat: site.discussions | concat: site.talks | concat: site.competitions %}
+        {% assign fall2024_events = all_events | where: "semester", "Fall2024" %}
+        {% assign due_events = site.practicedays | where: "semester", "Fall2024" | map: "due_event" | compact %}
+        {% assign fall2024_events = fall2024_events | concat: due_events %}
+        {% assign fall2024_events_sorted = fall2024_events | sort: 'date' %}
+        {% for event in fall2024_events_sorted %}
+        <li class="table-row table-row-{{ event.type}}">
+            {% include schedule_row_{{ event.type }}.html event=event %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+

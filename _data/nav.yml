@@ -1,0 +1,20 @@
+items:
+- url: /
+  name: Home
+  icon_class: fa fa-home fa-lg
+
+- name: Schedule
+  icon_class: fas fa-calendar-alt
+  sub_items:
+    - url: /spring2024/
+      name: Spring 2024
+    - url: /fall2024/
+      name: Fall 2024
+
+- url: /projects/
+  name: Projects
+  icon_class: fas fa-user-graduate
+
+- url: /leadership/
+  name: Leadership Team
+  icon_class: fas fa-users
