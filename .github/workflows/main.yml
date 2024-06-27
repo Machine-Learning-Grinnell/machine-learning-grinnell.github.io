@@ -1,0 +1,55 @@
+name: Manage ML Grinnell Submodules
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs at 00:00 UTC every day
+  workflow_dispatch:  # Allows manual trigger
+  push:
+    branches: [ main ]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+        fetch-depth: 0
+
+    - name: Set up Git
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
+
+    - name: Manage Submodules
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # List of repositories to add as submodules
+        declare -A repos=(
+          ["ml-notebooks-Spring24"]="https://github.com/Machine-Learning-Grinnell/ml-notebooks-Spring24.git"
+          ["2024-Spring"]="https://github.com/Machine-Learning-Grinnell/2024-Spring.git"
+        )
+
+        for repo_name in "${!repos[@]}"; do
+          repo_url="${repos[$repo_name]}"
+          if [ ! -d "$repo_name" ]; then
+            echo "Adding submodule $repo_name"
+            git submodule add $repo_url $repo_name
+          else
+            echo "Submodule $repo_name already exists"
+          fi
+        done
+
+        # Update all submodules
+        git submodule update --remote --recursive
+
+        # Commit and push changes if there are any
+        git add .
+        if ! git diff --staged --quiet; then
+          git commit -m "Update ML Grinnell submodules"
+          git push
+        else
+          echo "No changes to commit"
+        fi
