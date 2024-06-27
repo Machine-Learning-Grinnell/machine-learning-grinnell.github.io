@@ -2,8 +2,8 @@
 course_name: Machine Learning & Artificial Intelligence Club
 course_description: "The Grinnell College Machine Learning and Artificial Intelligence Club is a student-led initiative dedicated to exploring the exciting world of artificial intelligence and machine learning. Open to students from all majors, the club provides a collaborative environment to learn, practice, and apply ML concepts. The club offers weekly sessions covering fundamental algorithms to cutting-edge AI advancements, catering to both beginners and experienced enthusiasts. The club provides a hands-on experience through participation in Kaggle competitions, collaborative projects, and datathons. Members have the opportunity to tackle real-world problems, build an impressive portfolio, and connect with professors and professionals in the field."
 
-baseurl: "/jekyll-course-website-template" # the subpath of your site, e.g. /blog/
-url: "http://kazemnejad.github.io/" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://machine-learning-grinnell.github.io" # the base hostname & protocol for your site
 
 schoolname: "Grinnell College"
 
