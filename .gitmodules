@@ -1,0 +1,6 @@
+[submodule "ml-notebooks-Spring24"]
+	path = ml-notebooks-Spring24
+	url = https://github.com/Machine-Learning-Grinnell/ml-notebooks-Spring24.git
+[submodule "2024-Spring"]
+	path = 2024-Spring
+	url = https://github.com/Machine-Learning-Grinnell/2024-Spring.git
